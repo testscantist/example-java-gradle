@@ -1,7 +1,19 @@
+
+plugins {
+ id "com.srcclr.gradle" version "2.2.21"
+}
+
 group 'com.srcclr'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'srcclr'
+
 apply plugin: 'java'
+
+
+srcclr {
+    failureLevel = "NEVER"
+}
 
 sourceCompatibility = 1.5
 

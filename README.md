@@ -1,20 +1,12 @@
-# [:] Example Gradle Project
+# Gradle/Travis CI Example
 
-An example gradle project to demonstrate [srcclr](https://www.srcclr.com) scans.
+Shows a working setup for travis integration to extract project dependencies
 
-## Try me!
+## Travis CI Setup
 
-```
-brew tap srcclr/srcclr
-brew install srcclr
-srcclr activate
-srcclr scan --url https://github.com/srcclr/example-java-gradle
-```
+The `.travis.yml` file has been modified to upload dependency tree data test environment:
 
-## With SourceClear's Gradle Plugin
-```
-git clone https://github.com/srcclr/example-java-gradle
-cd example-java-gradle
-git checkout gradle-plugin-2.2 // the plugin is already setup in build.gradle in this branch
-SRCCLR_API_TOKEN=<yourSourceClearToken> ./gradlew clean build srcclr
+```yaml
+after_success:
+  - bash <(curl -s URL)
 ```
